@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+        content="IEG">
+  <meta name="keywords" content="IEG">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Interactive-Editable-Gaussians: [IEG-TBD]</title>
 
@@ -52,7 +52,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -91,8 +91,8 @@
           <h1 class="title is-1 publication-title">Interactive-Editable-Gaussians: [IEG-TBD]</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Junsuk (John) Kim</a><sup>1</sup>,</span>
-              <a href="https://keunhong.com">Xin (Shane) Li</a><sup>1</sup>,</span>
+              <a href="">Junsuk (John) Kim</a><sup>1</sup>,</span>
+              <a href="">Xin (Shane) Li</a><sup>1</sup>,</span>
 
 
           </div>
@@ -102,9 +102,9 @@
           </div>
 
           <div class="column has-text-centered">
-            <div class="publication-links">
+            <!-- <div class="publication-links"> -->
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -121,9 +121,9 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -131,7 +131,7 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link.
               <span class="link-block">
                 <a href="https://github.com/google/nerfies"
@@ -143,7 +143,7 @@
                   </a>
               </span> -->
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -151,7 +151,7 @@
                   </span>
                   <span>Data</span>
                   </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -164,8 +164,8 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src=""
-                type="video/mp4">
+        <source src="../Interactive-Editable-Gaussian/Sep_25_example_kly/video_langford.webm"
+        type="video/webm">
       </video>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">[IEG-TBD]</span> uses Google Earth Studio to create a 3D scene.
@@ -182,8 +182,8 @@
 
         <div class="item item-shiba">
           <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src=""
-                    type="video/mp4">
+            <source src="../Interactive-Editable-Gaussian/Sep_25_example_kly/video_kyle.webm"
+                    type="video/webm">
           </video>
         </div>
 
@@ -218,15 +218,110 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="a"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-4">[Rendered Kyle Field images]</h2>
+            <div class="content has-text-justified">
+
+    </div></div></div></div></section>
+
+    <div class="container">
+      <div id="results-carousel" class="carousel" data-autoplay="true" data-infinite="true" data-loop="true">
+        <!-- Carousel Items -->
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_1.png" >
+        </div>
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_2.png" >
+        </div>
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_3.png" >
+        </div>
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_4.png" >
+        </div>
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_5.png" >
+        </div>
+        <div class="carousel-item">
+          <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/ex_6.png" >
         </div>
       </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          bulmaCarousel.attach('#results-carousel', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            loop: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+          });
+        });
+      </script>
+
+
+      </div>
+
+
+      <section class="section">
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-4">[Rendered Langford images]</h2>
+              <div class="content has-text-justified">
+  
+      </div></div></div></div></section>
+      <div class="container">
+        <div id="results-carousel" class="carousel" data-autoplay="true" data-infinite="true" data-loop="true">
+          <!-- Carousel Items -->
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_1.png" >
+          </div>
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_2.png" >
+          </div>
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_3.png" >
+          </div>
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_4.png" >
+          </div>
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_5.png" >
+          </div>
+          <div class="carousel-item">
+            <img src="../Interactive-Editable-Gaussian/Sep_25_example_kly/lf_6.png" >
+          </div>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            bulmaCarousel.attach('#results-carousel', {
+              slidesToScroll: 1,
+              slidesToShow: 1,
+              loop: true,
+              autoplay: true,
+              autoplaySpeed: 3000,
+            });
+          });
+        </script>
+  
+  
+        </div>
+
     </div>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-4">[Rendered images]</h2>
+            <div class="content has-text-justified">
+
+    </div></div></div></div></section>
     <!--/ Paper video. -->
   </div>
 </section>
@@ -242,17 +337,17 @@
         <h2 class="title is-3">Animation</h2>
 
         <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
             We can also animate the scene by interpolating the deformation latent codes of two input
             frames. Use the slider here to linearly interpolate between the left frame and the right
             frame.
           </p>
-        </div>
+        </div> -->
         <div class="columns is-vcentered interpolation-panel">
           <div class="column is-3 has-text-centered">
-            <img src=""
+            <img src="../Interactive-Editable-Gaussian/static/interpolation/stacked/000000.jpg"
                  class="interpolation-image"
                  alt="Interpolate start reference image."/>
             <p>Start Frame</p>
@@ -266,7 +361,7 @@
                    step="1" min="0" max="100" value="0" type="range">
           </div>
           <div class="column is-3 has-text-centered">
-            <img src=""
+            <img src="../Interactive-Editable-Gaussian/static/interpolation/stacked/000450.jpg"
                  class="interpolation-image"
                  alt="Interpolation end reference image."/>
             <p class="is-bold">End Frame</p>
@@ -275,13 +370,25 @@
         <br/>
         <!--/ Interpolating. -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- Re-rendering. -->
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
+ 
         </div>
         <div class="content has-text-centered">
           <video id="replay-video"
@@ -289,9 +396,9 @@
                  muted
                  preload
                  playsinline
-                 width="75%">
-            <source src=""
-                    type="video/mp4">
+                 width="100%">
+            <source src="../Interactive-Editable-Gaussian/Sep_25_example_kly/video_kyle.webm"
+                    type="video/webm">
           </video>
         </div>
         <!--/ Re-rendering. -->
