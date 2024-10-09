@@ -746,7 +746,7 @@ async function main() {
     const url = new URL(
         // "nike.splat",
         // location.href,
-        params.get("url") || "langford.splat",
+        params.get("url") || "Big_lang.splat",
         "https://huggingface.co/datasets/johnkimryno/IEG_data/resolve/main/",
     );
     const req = await fetch(url, {
