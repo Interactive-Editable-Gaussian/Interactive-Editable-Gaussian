@@ -731,13 +731,45 @@ void main () {
 
 `.trim();
 
+// let defaultViewMatrix = [
+//     0.47, 0.04, 0.88, 0, -0.11, 0.99, 0.02, 0, -0.88, -0.11, 0.47, 0, 0.07,
+//     0.03, 6.55, 1,
+// ];
+// let viewMatrix = defaultViewMatrix;
 let defaultViewMatrix = [
-    0.47, 0.04, 0.88, 0, -0.11, 0.99, 0.02, 0, -0.88, -0.11, 0.47, 0, 0.07,
-    0.03, 6.55, 1,
-];
+    1.1112506512563158,
+    -0.15041398349552132,
+    -0.09218255611246323,
+    0,
+    0.13204804026328582,
+    0.6534513253730996,
+    0.7403814425218695,
+    0,
+    -0.22742453466090912,
+    -0.7143390280223423,
+    0.6673813258388134,
+    0,
+    0.7301928062325114,
+    -0.11447479708601058,
+    1.8436356013551756,
+    0.9999999999999988
+  ];
 let viewMatrix = defaultViewMatrix;
+// let defaultViewMatrix = [
+//     1, 0, 0, 0,
+//     0, 1, 0, 0,
+//     0, 0, 1, 0,
+//     0, 0, 5, 1, // 클로즈업 거리 조정
+// ];
+// let viewMatrix = defaultViewMatrix;
+
+
+
+
 async function main() {
-    let carousel = true;
+    // `carousel` 관련 코드 제거
+    let carousel = false;
+
     const params = new URLSearchParams(location.search);
     try {
         viewMatrix = JSON.parse(decodeURIComponent(location.hash.slice(1)));
@@ -865,6 +897,19 @@ async function main() {
 
     window.addEventListener("resize", resize);
     resize();
+    window.addEventListener("keydown", (e) => {
+        if (e.code === "KeyM") {
+            const matrixData = JSON.stringify(viewMatrix, null, 2); // Convert the matrix to a JSON string
+            const blob = new Blob([matrixData], { type: "application/json" }); // Create a Blob object
+            const link = document.createElement("a"); // Create a link element
+            link.href = URL.createObjectURL(blob); // Create a URL for the Blob
+            link.download = "viewMatrix.json"; // Set the file name
+            document.body.appendChild(link); // Append the link to the document
+            link.click(); // Trigger the download
+            document.body.removeChild(link); // Remove the link after the download
+            console.log("Matrix saved to file: viewMatrix.json");
+        }
+    });
 
     worker.onmessage = (e) => {
         if (e.data.buffer) {
