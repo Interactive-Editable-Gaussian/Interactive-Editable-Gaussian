@@ -731,13 +731,45 @@ void main () {
 
 `.trim();
 
-let defaultViewMatrix = [
-    0.47, 0.04, 0.88, 0, -0.11, 0.99, 0.02, 0, -0.88, -0.11, 0.47, 0, 0.07,
-    0.03, 6.55, 1,
-];
+// let defaultViewMatrix = [
+//     0.47, 0.04, 0.88, 0, -0.11, 0.99, 0.02, 0, -0.88, -0.11, 0.47, 0, 0.07,
+//     0.03, 6.55, 1,
+// ];
+// let viewMatrix = defaultViewMatrix;
+let defaultViewMatrix =[
+    -0.1315240360617127,
+    -1.016269521844206,
+    0.464647917146529,
+    0,
+    -0.024659676993990205,
+    0.4328068049359984,
+    0.8970340963038513,
+    0,
+    -0.95793772228137,
+    0.25729031489772214,
+    -0.15348294397166198,
+    0,
+    0.20952592316783636,
+    -0.3238382179594637,
+    2.9244533693575407,
+    0.999999999999999
+  ];
 let viewMatrix = defaultViewMatrix;
+// let defaultViewMatrix = [
+//     1, 0, 0, 0,
+//     0, 1, 0, 0,
+//     0, 0, 1, 0,
+//     0, 0, 5, 1, // 클로즈업 거리 조정
+// ];
+// let viewMatrix = defaultViewMatrix;
+
+
+
+
 async function main() {
-    let carousel = true;
+    // `carousel` 관련 코드 제거
+    let carousel = false;
+
     const params = new URLSearchParams(location.search);
     try {
         viewMatrix = JSON.parse(decodeURIComponent(location.hash.slice(1)));
@@ -746,7 +778,7 @@ async function main() {
     const url = new URL(
         // "nike.splat",
         // location.href,
-        params.get("url") || "park.splat",//"Big_lang.splat",
+        params.get("url") || "park.splat",
         "https://huggingface.co/datasets/johnkimryno/IEG_data/resolve/main/",
     );
     const req = await fetch(url, {
@@ -865,6 +897,19 @@ async function main() {
 
     window.addEventListener("resize", resize);
     resize();
+    window.addEventListener("keydown", (e) => {
+        if (e.code === "KeyM") {
+            const matrixData = JSON.stringify(viewMatrix, null, 2); // Convert the matrix to a JSON string
+            const blob = new Blob([matrixData], { type: "application/json" }); // Create a Blob object
+            const link = document.createElement("a"); // Create a link element
+            link.href = URL.createObjectURL(blob); // Create a URL for the Blob
+            link.download = "viewMatrix.json"; // Set the file name
+            document.body.appendChild(link); // Append the link to the document
+            link.click(); // Trigger the download
+            document.body.removeChild(link); // Remove the link after the download
+            console.log("Matrix saved to file: viewMatrix.json");
+        }
+    });
 
     worker.onmessage = (e) => {
         if (e.data.buffer) {
